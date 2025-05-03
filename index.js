@@ -390,7 +390,8 @@ function mergeSubtitles(mainSubs, transSubs, mergeThresholdMs = 500) {
             mergedSubs.push({
                 ...mainSub, // Keep main timing and ID
                 // Combine flattened texts with a newline, keeping translation italic and yellow
-                text: `${flatMainText}\n<font color="yellow"><i>${flatTransText}</i></font>`
+                // text: `${flatMainText}\n<font color="yellow"><i>${flatTransText}</i></font>`
+                text: `<font color="red"><i>${flatTransText}</i></font>`
             });
         } else {
             // If no suitable translation match found, add the main subtitle as is (also flattened)
