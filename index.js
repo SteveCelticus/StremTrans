@@ -26,7 +26,7 @@ const builder = new addonBuilder({
     id: 'com.serhat.strelingo',
     version: '0.1.1',
     name: 'Strelingo - Dual Language Subtitles',
-    description: 'Provides dual subtitles (main + translation) from OpenSubtitles for language learning.',
+    description: 'Provides dual subtitles (main + translation) from OpenSubtitles for language learning. <br><a href="https://github.com/Serkali-sudo/strelingo-addon" style="color: #1E90FF;">GitHub</a>',
     resources: ['subtitles'],
     types: ['movie', 'series'],
     idPrefixes: ['tt'],
@@ -390,7 +390,7 @@ function mergeSubtitles(mainSubs, transSubs, mergeThresholdMs = 500) {
             mergedSubs.push({
                 ...mainSub, // Keep main timing and ID
                 // Combine flattened texts with a newline, keeping translation italic and yellow
-                text: `${flatMainText}\n<font color="yellow"><i>${flatTransText}</i></font>`
+                text: `<font color="yellow"><i>${flatTransText}</i></font>`
             });
         } else {
             // If no suitable translation match found, add the main subtitle as is (also flattened)
