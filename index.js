@@ -388,7 +388,7 @@ function mergeSubtitles(mainSubs, transSubs, mergeThresholdMs = 500) {
             const flatTransText = bestTransSub.text.replace(/\r?\n|\r/g, ' ');
 
             mergedSubs.push({
-                // ...mainSub, // Keep main timing and ID
+                ...mainSub, // Keep main timing and ID
                 // Combine flattened texts with a newline, keeping translation italic and yellow
                 text: `${flatMainText}\n<font color="white"><i>${flatTransText}</i></font>`
             });
