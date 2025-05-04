@@ -30,8 +30,8 @@ const builder = new addonBuilder({
     resources: ['subtitles'],
     types: ['movie', 'series'],
     idPrefixes: ['tt'],
-    logo: 'https://github.com/SteveCelticus/StremTrans/blob/main/assets/stremtrans_icon.jpg?raw=true',
-    background: 'https://github.com/SteveCelticus/StremTrans/blob/main/assets/stremtrans_back.jpg?raw=true',
+    logo: 'https://github.com/SteveCelticus/StremTrans/raw/main/assets/stremtrans_icon.jpg?raw=true',
+    background: 'https://github.com/SteveCelticus/StremTrans/raw/main/assets/stremtrans_back.jpg?raw=true',
     catalogs: [],
     behaviorHints: {
         configurable: true,
