@@ -31,7 +31,7 @@ const builder = new addonBuilder({
     types: ['movie', 'series'],
     idPrefixes: ['tt'],
     logo: 'https://raw.githubusercontent.com/SteveCelticus/StremTrans/refs/heads/main/assets/stremtrans_icon.jpg',
-    background: 'https://raw.githubusercontent.com/SteveCelticus/StremTrans/refs/heads/main/assets/stremtrans_back.jpg',
+    background: 'https://raw.githubusercontent.com/SteveCelticus/StremTrans/blob/heads/main/assets/stremtrans_back.jpg',
     catalogs: [],
     behaviorHints: {
         configurable: true,
