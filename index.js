@@ -24,28 +24,28 @@ let requestTimer = null;
 // Create a new addon builder
 const builder = new addonBuilder({
     id: 'com.serhat.strelingo',
-    version: '0.1.1',
-    name: 'Strelingo - Dual Language Subtitles',
-    description: 'Provides dual subtitles (main + translation) from OpenSubtitles for language learning. <br><a href="https://github.com/Serkali-sudo/strelingo-addon" style="color: #1E90FF;">GitHub</a>',
+    version: '1.0.0',
+    name: 'StremTrans',
+    description: 'Traduttore automatico per sottotitoli. Questo è un fork della repo <br><a href="https://github.com/Serkali-sudo/strelingo-addon" style="color: #1E90FF;">GitHub</a>',
     resources: ['subtitles'],
     types: ['movie', 'series'],
     idPrefixes: ['tt'],
-    logo: 'https://raw.githubusercontent.com/Serkali-sudo/strelingo-addon/refs/heads/main/assets/strelingo_icon.jpg',
+    logo: 'https://raw.githubusercontent.com/Serkali-sudo/strelingo-addon/refs/heads/main/assets/stremtrans_icon.jpg',
     background: 'https://raw.githubusercontent.com/Serkali-sudo/strelingo-addon/refs/heads/main/assets/strelingo_back.jpg',
     catalogs: [],
     behaviorHints: {
         configurable: true,
         configurationRequired: true
     },
-    stremioAddonsConfig: {
-        issuer: "https://stremio-addons.net",
-        signature: "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..lXnuMnJQRfJhhvSjtCRgEA.Pkd-2sawfsFx8_aNwVoXJyUP8nVoOQj2oU_UiHnv0u8vFcCZQiXbFfZoPCpiXSxOK6YCadj4xw_k034_Scj-pCrwtw96gAf2zmtXT0c2K4qqLuB42kCuokwvhBkoQDix.QOZAdelTEd338sxgF4OeBQ"
-    },
+   // stremioAddonsConfig: {
+     //   issuer: "https://stremio-addons.net",
+       // signature: "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..lXnuMnJQRfJhhvSjtCRgEA.Pkd-2sawfsFx8_aNwVoXJyUP8nVoOQj2oU_UiHnv0u8vFcCZQiXbFfZoPCpiXSxOK6YCadj4xw_k034_Scj-pCrwtw96gAf2zmtXT0c2K4qqLuB42kCuokwvhBkoQDix.QOZAdelTEd338sxgF4OeBQ"
+   // },
     config: [
         {
             key: 'mainLang',
             type: 'select',
-            title: 'Main Language (Audio Language)',
+            title: 'Lingua Principale',
             options: ['abk','afr','alb','amh','ara','arg','arm','asm','ast','azb','aze','baq','bel','ben','bos','bre','bul','bur','cat','chi','cze','dan','dut','ell','eng','epo','est','ext','fin','fre','geo','ger','gla','gle','glg','heb','hin','hrv','hun','ibo','ice','ina','ind','ita','jpn','kan','kaz','khm','kir','kor','kur','lav','lit','ltz','mac','mal','mar','may','mne','mni','mon','nav','nep','nor','oci','ori','per','pob','pol','pom','por','prs','pus','rum','rus','sat','scc','sin','slo','slv','sme','snd','som','spa','spl','spn','swa','swe','syr','tam','tat','tel','tet','tgl','tha','tok','tuk','tur','ukr','urd','uzb','vie','wel','wen','zhc','zhe','zht'],
             required: true,
             default: 'eng'
@@ -53,7 +53,7 @@ const builder = new addonBuilder({
         {
             key: 'transLang',
             type: 'select',
-            title: 'Translation Language (Your Language)',
+            title: 'Lingua della traduzione',
             options: ['abk','afr','alb','amh','ara','arg','arm','asm','ast','azb','aze','baq','bel','ben','bos','bre','bul','bur','cat','chi','cze','dan','dut','ell','eng','epo','est','ext','fin','fre','geo','ger','gla','gle','glg','heb','hin','hrv','hun','ibo','ice','ina','ind','ita','jpn','kan','kaz','khm','kir','kor','kur','lav','lit','ltz','mac','mal','mar','may','mne','mni','mon','nav','nep','nor','oci','ori','per','pob','pol','pom','por','prs','pus','rum','rus','sat','scc','sin','slo','slv','sme','snd','som','spa','spl','spn','swa','swe','syr','tam','tat','tel','tet','tgl','tha','tok','tuk','tur','ukr','urd','uzb','vie','wel','wen','zhc','zhe','zht'],
             required: true,
             default: 'ita'
