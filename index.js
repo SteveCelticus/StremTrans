@@ -30,7 +30,7 @@ const builder = new addonBuilder({
     resources: ['subtitles'],
     types: ['movie', 'series'],
     idPrefixes: ['tt'],
-    logo: 'https://raw.githubusercontent.com/Serkali-sudo/strelingo-addon/refs/heads/main/assets/stremtrans_icon.jpg',
+    logo: 'https://raw.githubusercontent.com/SteveCelticus/StremTrans/blob/main/assets/stremtrans_back.jpg',
     background: 'https://raw.githubusercontent.com/Serkali-sudo/strelingo-addon/refs/heads/main/assets/strelingo_back.jpg',
     catalogs: [],
     behaviorHints: {
